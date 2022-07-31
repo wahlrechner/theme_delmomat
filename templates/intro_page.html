@@ -2,6 +2,12 @@
 
 <h1>Willkommen beim {% wahlrechner_name %}</h1>
 
+{% if not thesen.first %}
+    <div class="infobox mb-4">
+        Der {% wahlrechner_name %} ist noch in Vorbereitung und demnächst auf dieser Seite verfügbar.
+    </div>
+{% endif %}
+
 <p>
     Am 9. Oktober 2022 findet die niedersächsische Landtagswahl statt, bei der auch ein*e Direktabgeordnete*r für
     unseren Wahlkreis gewählt wird. Die Jugendkonferenz Apensen bietet eine Plattform, auf der du deine Ansichten mit
@@ -22,9 +28,11 @@
     </i>
 </p>
 
-<div class="infobox">
-    Der {% wahlrechner_name %} sammelt keinerlei personenbezogene Daten und verwendet keine Cookies.
-    Indem du auf "Start" klickst, stimmt du den
-    <a class="underline" href="https://www.sjr-stade.de/impressum.html#a145">Datenschutzbedingungen</a>
-    zu.
-</div>
+{% if thesen.first %}
+    <div class="infobox">
+        Der {% wahlrechner_name %} sammelt keinerlei personenbezogene Daten und verwendet keine Cookies.
+        Indem du auf "Start" klickst, stimmt du den
+        <a class="underline" href="https://www.sjr-stade.de/impressum.html#a145">Datenschutzbedingungen</a>
+        zu.
+    </div>
+{% endif %}
