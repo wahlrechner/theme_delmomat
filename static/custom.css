@@ -1,0 +1,22 @@
+:root {
+    --accent-color: #fffac1;
+}
+
+body {
+    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+    --tw-gradient-from: var(--accent-color);
+    --tw-gradient-to: #e4e4e7;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+@media (prefers-color-scheme: light) {
+    html {
+        background-color: var(--accent-color);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: none;
+    }
+}
